@@ -1,7 +1,11 @@
-Order = ['scooter','wheelchair','stroller','power_controller','traffic_light_controller','table','kiosk','carrier','dog','fire_hydrant','stop','barricade','bench','chair','bus','bicycle','motorcycle','potted_plant','movable_signage','truck','traffic_light','traffic_sign','bollard','pole','person','tree_trunk','car']
+'''LIST VARIABLE'''
+ORDER = ['scooter','wheelchair','stroller','power_controller','traffic_light_controller','table','kiosk','carrier','dog','fire_hydrant','stop','barricade','bench','chair','bus','bicycle','motorcycle','potted_plant','movable_signage','truck','traffic_light','traffic_sign','bollard','pole','person','tree_trunk','car']
 used_img = []
-instance_THRESHOLD = 1700
 
+'''INT VARIABLE'''
+INSTANCE_THRESHOLD = 1700
+
+'''DICTIONARY VARIABLE'''
 Class_index = {'bicycle' : 0
     ,'bus':1
     ,'car':2
@@ -32,10 +36,12 @@ Class_index = {'bicycle' : 0
     ,'traffic_sign':27
     ,'tree_trunk':28} #Class Annotation을 위한 {클래스 이름 : 라벨 넘버} 1:1 대응 Dictionary
 Class_num = {} #Instance 개수를 구하기 위한 {인스턴스(클래스) 이름 : 인스턴스(클래스) 갯수} 1:1 대응 Dictionary
+#                                            Class_num의 해당되는 int 값들은 전부 0으로 설정되어 있는 상태.
+
+
 for name in enumerate(Class_index):
     # print(name)
     Class_num[name[1]] = 0
-
 
 
 # 우선순위 적용. 인스턴스 개수가 적은 순서로, 오름차순으로 정렬함.
@@ -50,3 +56,12 @@ for name in enumerate(Class_index):
 #                       만약 Class_num(해당되는 인스턴스) < instance_THRESHOLD 이면 그 차이만큼 채움 시작. 이 과정을 반복함.
 
 # 추가적인 사항 : 각 Iteration 마다 Log를 기록하여 txt로 남기면 디버깅 편리할 듯.
+
+
+
+def Progress(order, threshold):
+    for instance_selected in range(order):
+
+
+if __name__ == '__main__':
+    Progress(ORDER, INSTANCE_THRESHOLD)
