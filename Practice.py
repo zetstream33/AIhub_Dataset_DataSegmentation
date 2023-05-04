@@ -12,10 +12,7 @@
 # print("{} {} {} {}".format(x,y,w,h))  -> Normalization 함수 정상 작동 확인 (2023.03.24 00:25)
 
 
-from PIL import Image
-from PIL import ImageDraw
-import numpy as np
-import matplotlib.pyplot as plt
+
 
     # def pil_draw_rect(image, point1, point2):
     #     draw = ImageDraw.Draw(image)
@@ -62,6 +59,51 @@ import os
 #     else:
 #         empty_list.append(str(i + 1).zfill(4))
 
-for i in range(10):
-    for j in range(10):
-        print("{} {}".format(i,j))
+# for i in range(10):
+#     for j in range(10):
+#         print("{} {}".format(i,j))
+
+Class_index = {'bicycle' : 0
+    ,'bus':1
+    ,'car':2
+    ,'carrier':3
+    ,'cat':4
+    ,'dog':5
+    ,'motorcycle':6
+    ,'movable_signage':7
+    ,'person':8
+    ,'scooter':9
+    ,'stroller':10
+    ,'truck':11
+    ,'wheelchair':12
+    ,'barricade':13
+    ,'bench':14
+    ,'bollard':15
+    ,'chair':16
+    ,'fire_hydrant':17
+    ,'kiosk':18
+    ,'parking_meter':19
+    ,'pole':20
+    ,'potted_plant':21
+    ,'power_controller':22
+    ,'stop':23
+    ,'table':24
+    ,'traffic_light':25
+    ,'traffic_light_controller':26
+    ,'traffic_sign':27
+    ,'tree_trunk':28} #Class Annotation을 위한 {클래스 이름 : 라벨 넘버} 1:1 대응 Dictionary
+
+Class_num = {} #Instance 개수를 구하기 위한 {인스턴스(클래스) 이름 : 인스턴스(클래스) 갯수} 1:1 대응 Dictionary
+
+for name in enumerate(Class_index):
+    # print(name)
+    Class_num[name[1]] = 0
+
+Class_num['motorcycle'] += 1
+Class_num['bus'] += 3
+Class_num['bus'] += 3
+
+print(Class_num)
+print(Class_index['motorcycle'])
+
+
