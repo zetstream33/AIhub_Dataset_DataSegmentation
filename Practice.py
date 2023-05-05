@@ -103,7 +103,8 @@ Class_num['motorcycle'] += 1
 Class_num['bus'] += 3
 Class_num['bus'] += 3
 
-print(Class_num)
-print(Class_index['motorcycle'])
 
-
+for i in range(10):
+    print(i)
+    if i > 5:
+        break
